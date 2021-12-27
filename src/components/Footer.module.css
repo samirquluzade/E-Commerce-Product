@@ -4,6 +4,8 @@
     padding-top: 2%;
     display: flex;
     flex-direction: row;
+    width: 100%;
+    margin-top:5%;
 }
 .logo span:nth-child(1){
     color:#00A651;
