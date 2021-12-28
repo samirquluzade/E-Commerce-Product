@@ -2,6 +2,8 @@ import React from 'react';
 import Header from "./Header";
 import classes from'./BasketPrice.module.css';
 import {Container} from "react-bootstrap";
+import SimilarProducts from "./SimilarProducts";
+import Footer from "./Footer";
 
 const BasketPrice = () => {
     return(
@@ -100,7 +102,9 @@ const BasketPrice = () => {
                     </div>
                 </div>
             </div>
+            <SimilarProducts />
         </Container>
+          <Footer />
       </>
     );
 }

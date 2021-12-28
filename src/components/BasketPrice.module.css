@@ -158,6 +158,12 @@
     .sumSection{
         height: 280px;
     }
+    .generalPriceSection{
+        padding: 0 3%;
+    }
+    .promocode{
+        padding: 3% 3%;
+    }
 }
 @media (max-width: 1400px) {
     .productCount{
