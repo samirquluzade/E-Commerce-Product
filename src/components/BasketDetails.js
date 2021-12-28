@@ -6,7 +6,7 @@ import {Container} from "react-bootstrap";
 
 const BasketDetails = () => {
 
-    const [cash,setCash] = useState(false);
+    const [cash,setCash] = useState(true);
     const [credit,setCredit] = useState(false);
 
     const chooseSection = (e) => {
@@ -18,14 +18,13 @@ const BasketDetails = () => {
         setCash(false);
     }
 
-
     return(
         <>
             <Header />
                 <Container>
                         <div className={classes.basketSection}>
                             <div className={classes.inputsSection}>
-                                <h2>Səbət</h2>
+                                {cash ? <h2>Səbət</h2> : <h2>Kreditlə ödəniş</h2>}
                                 <div className={classes.paymentSection}>
                                     <div className={!cash ? classes.cashSection : classes.cashSectionActive} onClick={chooseSection}>
                                         <h5>Nağd</h5>
@@ -58,10 +57,21 @@ const BasketDetails = () => {
                                         </div>
                                     </div>
                                     <div className={classes.basicInputs}>
-                                        <div className={classes.inputW}>
+                                        {cash ? (<div className={classes.inputW}>
                                             <label htmlFor="name">Əlavə qeydlər</label>
                                             <input type="text" name="name" className="form-control"/>
-                                        </div>
+                                        </div>) : (
+                                            <>
+                                                <div className={classes.input}>
+                                                    <label htmlFor="name">Şəxsiyyət vəsiqəsinin FİN kodu <span>*</span></label>
+                                                    <input type="text" name="name" className="form-control"/>
+                                                </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                <div className={classes.input}>
+                                                <label htmlFor="surname">Şəhər telefon nömrəsi <span>*</span></label>
+                                                <input type="text" name="surname" className="form-control"/>
+                                                </div>
+                                            </>
+                                            )}
                                     </div>
                                     <div className={classes.deliveryAddress}>
                                         <h5>Çatdırılma ünvanı</h5>

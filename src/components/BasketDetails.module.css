@@ -3,6 +3,10 @@ input:focus{
     -webkit-box-shadow: none;
     box-shadow: none!important;
 }
+.basketSection{
+    display: flex;
+    flex-direction: row;
+}
 .inputsSection{
     width: 50%;
 }
@@ -119,4 +123,18 @@ input:focus{
 }
 .result h4{
     margin:5% 0 5% 15%;
+}
+@media(max-width: 768px){
+    .inputsSection{
+        width: 100%;
+    }
+    .inputsSection h2{
+        text-align: center;
+    }
+    .sumSection{
+        width: 100%;
+    }
+    .basketSection{
+        flex-direction: column;
+    }
 }
